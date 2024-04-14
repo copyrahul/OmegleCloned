@@ -1,4 +1,11 @@
 {
+  "name": "pickachatstrangers",
+  "version": "1.0.0",
+  "description": "Your app description",
+  "main": "epsile-server.js",
+  "scripts": {
+    "start": "node epsile-server.js"
+  },
   "dependencies": {
     "compression": "^1.7.4",
     "express": "^4.19.2",
