@@ -27,7 +27,7 @@ const logger = winston.createLogger({
 
 // Configuration
 require('dotenv').config(); // Load environment variables from .env file
-const port = process.env.PORT || 8001; // Use environment variable or default to 8001
+const PORT = process.env.PORT || 8001; // Use environment variable or default to 8001
 
 const app = express();
 const server = http.createServer(app);
@@ -35,14 +35,14 @@ const io = socketIO(server, {
     log: 1
 });
 
-server.listen(port, () => {
-    logger.info(`epsile server listening at port ${port}`);
+server.listen(PORT, () => {
+    logger.info(`epsile server listening at port ${PORT}`);
 });
 
 // Use the compression middleware
 app.use(compression());
 
-app.use(express.static(__dirname + '/'));
+app.use(express.static(__dirname));
 
 // Global variables to keep track of sockets, users, and the state of the app
 const sockets = {};
